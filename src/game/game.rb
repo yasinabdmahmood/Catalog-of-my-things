@@ -1,4 +1,5 @@
 require_relative '../item/item';
+require_relative '../../utils/time_diff'
 require 'date'
 
 class Game < Item
@@ -8,12 +9,7 @@ class Game < Item
     @last_played_at = Date.strptime(last_played_at, '%m/%d/%Y')
   end
 
-  def time_diff
-    total_days = (Date.today - @last_played_at).to_i
-    (total_days/365).to_i
-  end
-
   def can_be_archived?
-    super && (time_diff > 2)
+    super && (TimeDiff.years(@last_played_at) > 2)
   end
 end
