@@ -1,9 +1,9 @@
-require './src/source/source.rb'
-#mock Item class
-class Item 
-    def set_source(source)
-        @source = source
-    end
+require './src/source/source'
+# mock Item class
+class Item
+  attr_reader :source
+
+  def source=(source); end
 end
 describe Source do
   context 'Test add_item method' do
