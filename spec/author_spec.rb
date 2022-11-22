@@ -26,7 +26,7 @@ describe Author do
       end
 
       it 'will check full_name should be "Yasin Abdulwahed" for @author3' do
-        full_name = @author3.first_name + ' '+@author3.last_name
+        full_name = "#{@author3.first_name} #{@author3.last_name}"
         expect(full_name).to eql('Yasin Abdulwahed')
       end
     end
