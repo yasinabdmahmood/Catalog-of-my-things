@@ -6,12 +6,12 @@ class Item
 
   def initialize(publish_date)
     @id = SecureRandom.hex(5)
-    @publish_date = publish_date
+    @publish_date = Date.strptime(publish_date, '%m/%d/%Y')
     @archived = false
   end
 
   def can_be_archived?
-    TimeDiff.years(@publish_date) >= 10
+    TimeDiff.new.years(@publish_date) >= 10
   end
 
   def move_to_archive()
