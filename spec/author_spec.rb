@@ -9,6 +9,14 @@ describe Author do
     end
 
     describe 'Testing Author Class Case #1' do
+      it 'will check the items array should be empty' do
+        expect(@author1.items).to be_empty
+        expect(@author2.items).to be_empty
+        expect(@author3.items).to be_empty
+      end
+    end
+
+    describe 'Testing Author Class Case #2' do
       it 'will check first_name should be "Aakash" for @author1' do
         expect(@author1.first_name).to eql('Aakash')
       end
