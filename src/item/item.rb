@@ -14,15 +14,27 @@ class Item
     TimeDiff.new.years(@publish_date) >= 10
   end
 
-  def move_to_archive()
+  def move_to_archive
     @archived = can_be_archived? if can_be_archived?
   end
 
-  def genre=(genre); end
+  def genre=(genre)
+    @genre = genre
+    genre.items << self unless genre.items.include?(self)
+  end
 
-  def author=(author); end
+  def author=(author)
+    @author = author
+    author.items << self unless author.items.include?(self)
+  end
 
-  def source=(source); end
+  def source=(source)
+    @source = source
+    source.items << self unless source.items.include?(self)
+  end
 
-  def label=(label); end
+  def label=(label)
+    @label = label
+    label.items << self unless label.items.include?(self)
+  end
 end
