@@ -1,5 +1,5 @@
+require_relative '../../utils/time_diff'
 require 'securerandom'
-require_relative '../utils/time_diff'
 
 class Item
   attr_reader :genre, :author, :source, :label
