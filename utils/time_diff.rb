@@ -1,3 +1,4 @@
+require 'date'
 class TimeDiff
   def years(t_string)
     total_days = (Date.today - t_string).to_i

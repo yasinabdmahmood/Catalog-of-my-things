@@ -1,14 +1,10 @@
-require './src/source/source'
-# mock Item class
-class Item
-  attr_reader :source
+require_relative '../src/source/source'
+require_relative '../src/item/item'
 
-  def source=(source); end
-end
 describe Source do
   context 'Test add_item method' do
     source = Source.new('source')
-    item = Item.new
+    item = Item.new('11/11/2011')
     it 'items instance variable should should have langth of one' do
       source.add_item(item)
       expect(source.items.length).to eql 1
