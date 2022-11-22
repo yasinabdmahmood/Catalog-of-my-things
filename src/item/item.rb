@@ -4,10 +4,10 @@ require_relative '../utils/time_diff'
 class Item
   attr_reader :genre, :author, :source, :label
 
-  def initialize(publish_date, archived: false)
+  def initialize(publish_date)
     @id = SecureRandom.hex(5)
     @publish_date = publish_date
-    @archived = archived
+    @archived = false
   end
 
   def can_be_archived?
