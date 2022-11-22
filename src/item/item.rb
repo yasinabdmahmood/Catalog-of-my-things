@@ -14,7 +14,7 @@ class Item
     TimeDiff.new.years(@publish_date) >= 10
   end
 
-  def move_to_archive()
+  def move_to_archive
     @archived = can_be_archived? if can_be_archived?
   end
 
