@@ -3,6 +3,8 @@ require_relative '../../utils/time_diff'
 require 'date'
 
 class Game < Item
+  attr_reader :multiplayer
+  
   def initialize(multiplayer, publish_date, last_played_at)
     super(publish_date)
     @multiplayer = multiplayer
