@@ -18,15 +18,11 @@ class Item
     @archived = can_be_archived? if can_be_archived?
   end
 
-  def genre=(genre)
-  end
+  def genre=(genre); end
 
-  def author=(author)
-  end
+  def author=(author); end
 
-  def source=(source)
-  end
+  def source=(source); end
 
-  def label=(label)
-  end
+  def label=(label); end
 end
