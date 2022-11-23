@@ -3,7 +3,7 @@ require_relative '../src/book/book'
 describe Book do
   context 'Book class tests' do
     before(:each) do
-      @book = Book.new('Odyssey', 'Publisher_Name', '01/01/2022', 'good')
+      @book = Book.new('Publisher_Name', '01/01/2022', 'good')
     end
 
     it 'should be a Book class instance' do
