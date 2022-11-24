@@ -15,8 +15,6 @@ class App
     @genres = []
     @labels = []
     @games = []
-
-    load_data
   end
 
   def list_of_options
@@ -63,11 +61,11 @@ class App
   end
 
   def start_program
+    load_data
     puts "\n    Welcome to the catalog app  :)"
     until list_of_options
       input = gets.chomp
       if input == '0'
-        save_data
         puts "\n    Thank you for using our app  :) \n "
         break
       end
