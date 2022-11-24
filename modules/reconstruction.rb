@@ -10,21 +10,11 @@ module Reconstruction
     label_objects = []
     author_objects = []
     books.each do |book|
-      publisher = book['publisher']
-      publish_date = book['publish_date']
-      cover_state = book['cover_state']
-      title = book['title']
-      color = book['color']
-      first_name = book['first_name']
-      last_name = book['last_name']
-      current_book = Book.new(publisher, publish_date, cover_state)
-      current_label = Label.new(title, color)
-      current_author = Author.new(first_name, last_name)
-      current_label.add_item(current_book)
-      current_author.add_item(current_book)
-      book_objects << current_book
-      label_objects << current_label
-      author_objects << current_author
+      current_label.add_item(Book.new(book['publisher'], book['publish_date'], book['cover_state']))
+      current_author.add_item(Book.new(book['publisher'], book['publish_date'], book['cover_state']))
+      book_objects << Book.new(book['publisher'], book['publish_date'], book['cover_state'])
+      label_objects << Label.new(book['title'], book['color'])
+      author_objects << Author.new(book['first_name'], book['last_name'])
     end
     {
       'books' => book_objects,
@@ -37,16 +27,9 @@ module Reconstruction
     game_objects = []
     label_objects = []
     games.each do |game|
-      multiplayer = game['multiplayer']
-      publish_date = game['publish_date']
-      last_played_at = game['last_played_at']
-      title = game['title']
-      color = game['color']
-      current_game = Game.new(multiplayer, publish_date, last_played_at)
-      current_label = Label.new(title, color)
-      current_label.add_item(current_game)
-      game_objects << current_game
-      label_objects << current_label
+      current_label.add_item(Game.new(game['multiplayer'], game['publish_date'], game['last_played_at']))
+      game_objects << Game.new(game['multiplayer'], game['publish_date'], game['last_played_at'])
+      label_objects << Label.new(game['title'], game['color'])
     end
     {
       'games' => game_objects,
@@ -59,19 +42,11 @@ module Reconstruction
     genre_objects = []
     label_objects = []
     music_albums.each do |music_album|
-      publish_date = music_album['publish_date']
-      on_spotify = music_album['on_spotify']
-      title = music_album['title']
-      color = music_album['color']
-      name = music_album['name']
-      current_music_album = MusicAlbum.new(publish_date, on_spotify)
-      current_label = Label.new(title, color)
-      current_genre = Genre.new(name)
-      current_genre.add_item(current_music_album)
-      current_label.add_item(current_music_album)
-      music_album_objects << current_music_album
-      label_objects << current_label
-      genre_objects << current_genre
+      current_genre.add_item(MusicAlbum.new(music_album['publish_date'], music_album['on_spotify']))
+      current_label.add_item(MusicAlbum.new(music_album['publish_date'], music_album['on_spotify']))
+      music_album_objects << MusicAlbum.new(music_album['publish_date'], music_album['on_spotify'])
+      label_objects << Label.new(music_album['title'], music_album['color'])
+      genre_objects << Genre.new(music_album['name'])
     end
     {
       'music_albums' => music_album_objects,
