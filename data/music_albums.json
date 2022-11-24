@@ -1,0 +1,16 @@
+[
+  {
+    "on_spotify": true,
+    "publish_date": "2022-01-01",
+    "title": "item1",
+    "color": "red",
+    "name": "g1"
+  },
+  {
+    "on_spotify": false,
+    "publish_date": "2022-01-02",
+    "title": "item2",
+    "color": "blue",
+    "name": "g2"
+  }
+]
