@@ -20,18 +20,22 @@ class App
   end
 
   def list_of_options
-    puts "\n"
-    puts '      Choose an option by entering a number'
-    puts '      1- List all books'
-    puts '      2- List all Music albums'
-    puts '      3- List all Games'
-    puts '      4- List all Genres'
-    puts '      5- List all Labels'
-    puts '      6- List all Authors'
-    puts '      7- Add a book'
-    puts '      8- Add a music album'
-    puts '      9- Add a game'
-    puts '      0- Exit'
+    print <<~DOC
+      Choose an option by entering a number
+
+      1- List all books
+      2- List all Music albums
+      3- List all Games
+      4- List all Genres
+      5- List all Labels
+      6- List all Authors
+      8- Add a music album
+      7- Add a book
+      9- Add a game
+      0- Exit
+
+    DOC
+    print 'Enter you choice : '
   end
 
   def list(input)
@@ -63,7 +67,7 @@ class App
   end
 
   def start_program
-    puts "\n    Welcome to the catalog app  :)"
+    puts "\nWelcome to the catalog app  :)\n\n"
     until list_of_options
       input = gets.chomp
       if input == '0'
