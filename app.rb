@@ -4,6 +4,7 @@ require_relative './src/author/author'
 require_relative './src/music_album/music_album'
 require_relative './src/genre/genre'
 require_relative './src/game/game'
+require_relative './utils/msg'
 
 class App
   attr_accessor :books, :albums, :authors, :genres, :labels, :games
@@ -21,6 +22,8 @@ class App
 
   def list_of_options
     print <<~DOC
+
+      -------------------------------------
       Choose an option by entering a number
 
       1- List all books
@@ -29,8 +32,8 @@ class App
       4- List all Genres
       5- List all Labels
       6- List all Authors
-      8- Add a music album
       7- Add a book
+      8- Add a music album
       9- Add a game
       0- Exit
 
@@ -40,49 +43,49 @@ class App
 
   def list(input)
     case input
-    when '1'
+    when 1
       list_all_books
-    when '2'
+    when 2
       list_all_albums
-    when '3'
+    when 3
       list_all_games
-    when '4'
+    when 4
       list_all_genres
-    when '5'
+    when 5
       list_all_labels
-    when '6'
+    when 6
       list_all_authors
     end
   end
 
   def add(input)
     case input
-    when '7'
+    when 7
       add_new_book
-    when '8'
+    when 8
       add_new_album
-    when '9'
+    when 9
       add_new_game
     end
   end
 
   def start_program
-    puts "\nWelcome to the catalog app  :)\n\n"
+    puts "\nWelcome to the catalog app  :)\n"
     until list_of_options
-      input = gets.chomp
-      if input == '0'
+      input = gets.chomp.to_i
+      if input.zero?
         save_data
-        puts "\n    Thank you for using our app  :) \n "
+        Msg.new.success('Thank you for using our app  :)')
         break
       end
-      list(input) if [1, 2, 3, 4, 5, 6].includes input
-      add(input) if [7, 8, 9].includes input
+      list(input) if [1, 2, 3, 4, 5, 6].include? input
+      add(input) if [7, 8, 9].include? input
     end
   end
 
   def list_all_books
     if @books.empty?
-      puts 'No available books'
+      Msg.new.error('Books not available yet :(')
     else
       puts "\nALL BOOKS\n\n"
       puts "\nBooks \t| Publisher \t| Publish date \t| Cover state"
@@ -92,7 +95,7 @@ class App
 
   def list_all_labels
     if @labels.empty?
-      puts "\nNote: No Labels available."
+      Msg.new.error('Lables not available yet :(')
     else
       puts "\nALL LABELS\n\n"
       puts "\nLabels \t| Color"
@@ -105,7 +108,7 @@ class App
 
   def list_all_albums
     if @albums.empty?
-      puts "\nNote: No albums available."
+      Msg.new.error('Albums not available yet :(')
     else
       puts "\nALL ALBUMS\n\n"
       puts "\Genre \t| On spotify? \t| Album Name \t| Publish Date"
@@ -119,7 +122,7 @@ class App
 
   def list_all_games
     if @games.empty?
-      puts "\nNote: No games available."
+      Msg.new.error('Games not available yet :(')
     else
       puts "\nALL GAMES\n\n"
       puts "\Games \t| Multiplayer \t| Last Played At"
@@ -132,7 +135,7 @@ class App
 
   def list_all_genres
     if @genres.empty?
-      puts "\nNote: No genres available."
+      Msg.new.error('Genres not available yet :(')
     else
       @genres.each do |genre|
         puts genre.name
@@ -143,7 +146,7 @@ class App
 
   def list_all_authors
     if @authors.empty?
-      puts "\nNote: No authors available."
+      Msg.new.error('Authors not available yet :(')
     else
       puts "\nALL AUTHORS\n\n"
       puts "\First Name \t| Last Name"
