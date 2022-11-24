@@ -1,15 +1,4 @@
 require 'json'
-module UserInput
-  def ask_for_user_inputs(*messages)
-    user_inputs = []
-    messages.each do |message|
-      puts message
-      user_inputs << gets.chomp
-    end
-    user_inputs
-  end
-end
-
 module StoreData
   def store(path, hash)
     File.write(path, '[]') unless File.exist?(path)
@@ -53,25 +42,5 @@ module StoreData
       'color' => game.label.color
     }
     store('data/games.json', hashed_game)
-  end
-end
-
-module GetData
-  def retrieve_data(path)
-    File.write(path, '[]') unless File.exist?(path)
-    file_data = File.read(path)
-    JSON.parse(file_data)
-  end
-
-  def retrive_books
-    retrieve_data('data/books.json')
-  end
-
-  def retrieve_games
-    retrieve_data('data/games.json')
-  end
-
-  def retrieve_music_album
-    retrieve_data('data/music_albums.json')
   end
 end
