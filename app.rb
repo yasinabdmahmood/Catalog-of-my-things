@@ -67,7 +67,7 @@ class App
     until list_of_options
       input = gets.chomp
       if input == '0'
-        preserve_files
+        save_data
         puts "\n    Thank you for using our app  :) \n "
         break
       end
@@ -88,12 +88,12 @@ class App
 
   def list_all_labels
     if @labels.empty?
-      puts "\nNote: No Label available."
+      puts "\nNote: No Labels available."
     else
       puts "\nALL LABELS\n\n"
       puts "\nLabels \t| Color"
       @labels.each do |label|
-        puts "#{label['title'].strip} \t| #{label['color']}"
+        puts "#{label.title} \t| #{label.color}"
         puts "\n----------------------------"
       end
     end
@@ -106,8 +106,8 @@ class App
       puts "\nALL ALBUMS\n\n"
       puts "\Genre \t| On spotify? \t| Album Name \t| Publish Date"
       @albums.each do |album|
-        puts "#{album.genre} \t| #{album.on_spotify.to_s.strip.rjust(10)} \t| #{album.label.name.to_s.strip.rjust(10)}
-        \t| #{album.publish_date.to_s.strip.rjust(10)}"
+        puts "#{album.genre} \t| #{album.on_spotify.to_s} \t| #{album.label.name.to_s}
+        \t| #{album.publish_date.to_s}"
         puts "\n---------------------------------------------------"
       end
     end
