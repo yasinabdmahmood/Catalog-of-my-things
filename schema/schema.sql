@@ -43,3 +43,24 @@ CREATE TABLE Genres (
   id SERIAL PRIMARY KEY,
   name VARCHAR(100)
 )
+
+CREATE TABLE Author (
+  id INT,
+  first_name VARCHAR(100),
+  last_name VARCHAR(100),
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE Game (
+  id INT,
+  multiplayer VARCHAR(100),
+  last_played_at VARCHAR(100),
+  publish_date Date,
+  archived Boolean,
+  label_id INT,
+  PRIMARY KEY (id),
+  FOREIGN KEY (label_id) REFERENCES Labels(id)
+);
+
+
+
