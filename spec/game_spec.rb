@@ -3,8 +3,8 @@ require_relative '../src/game/game'
 describe Game do
   context '#game' do
     before do
-      @game1 = Game.new('y', '12/08/2018', '10/10/2021')
-      @game2 = Game.new('n', '12/08/2010', '10/10/2018')
+      @game1 = Game.new('y', '2018-12-08', '2021-10-10')
+      @game2 = Game.new('n', '2010-08-12', '2018-10-10')
     end
 
     describe 'Testing Game Class Case #1' do
