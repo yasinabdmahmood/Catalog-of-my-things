@@ -1,9 +1,9 @@
 require_relative '../src/movie/movie'
 
 describe Movie do
-  movie1 = Movie.new('01/01/1945', true)
-  movie2 = Movie.new('01/01/2018', true)
-  movie3 = Movie.new('01/01/2018', false)
+  movie1 = Movie.new('1945-01-01', true)
+  movie2 = Movie.new('2018-01-01', true)
+  movie3 = Movie.new('2018-01-01', false)
 
   it 'creates a new Movie' do
     expect(movie1).to be_an_instance_of Movie
