@@ -1,4 +1,3 @@
-
 require_relative './src/book/book'
 require_relative './src/label/label'
 require_relative './src/author/author'
@@ -7,7 +6,6 @@ require_relative './src/genre/genre'
 require_relative './src/game/game'
 
 class App
-  
   attr_accessor :books, :albums, :authors, :genres, :labels, :games
 
   def initialize
@@ -35,8 +33,8 @@ class App
     puts '      9- Add a game'
     puts '      0- Exit'
   end
-  
-  def option(input)
+
+  def list(input)
     case input
     when '1'
       list_all_books
@@ -50,12 +48,17 @@ class App
       list_all_labels
     when '6'
       list_all_authors
+    end
+  end
+
+  def add(input)
+    case input
     when '7'
-      add_new_book_details
+      add_new_book
     when '8'
-      add_new_album_details
+      add_new_album
     when '9'
-      add_new_game_details
+      add_new_game
     end
   end
 
@@ -68,17 +71,18 @@ class App
         puts "\n    Thank you for using our app  :) \n "
         break
       end
-      option(input)
+      list(input) if [1, 2, 3, 4, 5, 6].includes input
+      add(input) if [7, 8, 9].includes input
     end
   end
 
   def list_all_books
     if @books.empty?
-    puts 'No available books'
+      puts 'No available books'
     else
-    puts "\nALL BOOKS\n\n"
-    puts "\nBooks \t| Publisher \t| Publish date \t| Cover state"
-    @books.each { |book| puts "#{book.label.name} #{book.publisher} #{book.publish_date} #{book.cover_state}" }
+      puts "\nALL BOOKS\n\n"
+      puts "\nBooks \t| Publisher \t| Publish date \t| Cover state"
+      @books.each { |book| puts "#{book.label.name} #{book.publisher} #{book.publish_date} #{book.cover_state}" }
     end
   end
 
@@ -102,7 +106,8 @@ class App
       puts "\nALL ALBUMS\n\n"
       puts "\Genre \t| On spotify? \t| Album Name \t| Publish Date"
       @albums.each do |album|
-        puts "#{album.genre} \t| #{album.on_spotify.to_s.strip.rjust(10)} \t| #{album.label.name.to_s.strip.rjust(10)} \t| #{album.publish_date.to_s.strip.rjust(10)}"
+        puts "#{album.genre} \t| #{album.on_spotify.to_s.strip.rjust(10)} \t| #{album.label.name.to_s.strip.rjust(10)}
+        \t| #{album.publish_date.to_s.strip.rjust(10)}"
         puts "\n---------------------------------------------------"
       end
     end
@@ -145,31 +150,17 @@ class App
     end
   end
 
-  def add_book()
-  
-  end
+  def add_book; end
 
-  def add_label()
+  def add_label; end
 
-  end
+  def add_author; end
 
-  def add_author()
-    
-  end
+  def add_album; end
 
-  def add_album()
- 
-  end
+  def add_game; end
 
-  def add_game()
-  
-  end
+  def save_data; end
 
-  def save_data
-    
-  end
-
-  def load_data
-   
-  end
+  def load_data; end
 end
