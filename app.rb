@@ -106,8 +106,8 @@ class App
       puts "\nALL ALBUMS\n\n"
       puts "\Genre \t| On spotify? \t| Album Name \t| Publish Date"
       @albums.each do |album|
-        puts "#{album.genre} \t| #{album.on_spotify.to_s} \t| #{album.label.name.to_s}
-        \t| #{album.publish_date.to_s}"
+        puts "#{album.genre} \t| #{album.on_spotify} \t| #{album.label.name}
+        \t| #{album.publish_date}"
         puts "\n---------------------------------------------------"
       end
     end
