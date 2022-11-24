@@ -6,7 +6,7 @@ class Item
 
   def initialize(publish_date)
     @id = SecureRandom.hex(5)
-    @publish_date = Date.strptime(publish_date, '%m/%d/%Y')
+    @publish_date = Date.strptime(publish_date, '%Y-%m-%d')
     @archived = false
   end
 
