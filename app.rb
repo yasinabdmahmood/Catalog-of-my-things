@@ -1,5 +1,5 @@
 
-require_relative './src/books/books'
+require_relative './src/book/book'
 require_relative './src/label/label'
 require_relative './src/author/author'
 require_relative './src/music_album/music_album'
@@ -73,59 +73,75 @@ class App
   end
 
   def list_all_books
-    puts 'No available books' if @books.empty?
+    if @books.empty?
+    puts 'No available books'
+    else
     puts "\nALL BOOKS\n\n"
     puts "\nBooks \t| Publisher \t| Publish date \t| Cover state"
     @books.each { |book| puts "#{book.label.name} #{book.publisher} #{book.publish_date} #{book.cover_state}" }
+    end
   end
 
   def list_all_labels
-    puts "\nNote: No Label available." if @labels.empty?
-    puts "\nALL LABELS\n\n"
-    puts "\nLabels \t| Color"
-    @labels.each do |label|
-      puts "#{label['title'].strip} \t| #{label['color']}"
-      puts "\n----------------------------"
+    if @labels.empty?
+      puts "\nNote: No Label available."
+    else
+      puts "\nALL LABELS\n\n"
+      puts "\nLabels \t| Color"
+      @labels.each do |label|
+        puts "#{label['title'].strip} \t| #{label['color']}"
+        puts "\n----------------------------"
+      end
     end
   end
 
   def list_all_albums
-    puts "\nNote: No albums available." if @albums.empty?
-
-    puts "\nALL ALBUMS\n\n"
-    puts "\Genre \t| On spotify? \t| Album Name \t| Publish Date"
-    @albums.each do |album|
-      puts "#{album.genre} \t| #{album.on_spotify.to_s.strip.rjust(10)} \t| #{album.label.name.to_s.strip.rjust(10)} \t| #{album.publish_date.to_s.strip.rjust(10)}"
-      puts "\n---------------------------------------------------"
+    if @albums.empty?
+      puts "\nNote: No albums available."
+    else
+      puts "\nALL ALBUMS\n\n"
+      puts "\Genre \t| On spotify? \t| Album Name \t| Publish Date"
+      @albums.each do |album|
+        puts "#{album.genre} \t| #{album.on_spotify.to_s.strip.rjust(10)} \t| #{album.label.name.to_s.strip.rjust(10)} \t| #{album.publish_date.to_s.strip.rjust(10)}"
+        puts "\n---------------------------------------------------"
+      end
     end
   end
 
   def list_all_games
-    puts "\nNote: No games available." if @games.empty?
-
-    puts "\nALL GAMES\n\n"
-    puts "\Games \t| Multiplayer \t| Last Played At"
-    @games.each do |game|
-      puts "\t #{game.label.name} \t#{game.last_played_at} \t| #{game.multiplayer}"
-      puts "\n-------------------------------------------------"
+    if @games.empty?
+      puts "\nNote: No games available."
+    else
+      puts "\nALL GAMES\n\n"
+      puts "\Games \t| Multiplayer \t| Last Played At"
+      @games.each do |game|
+        puts "\t #{game.label.name} \t#{game.last_played_at} \t| #{game.multiplayer}"
+        puts "\n-------------------------------------------------"
+      end
     end
   end
 
   def list_all_genres
-    puts "\nNote: No genres available." if @genres.empty?
-    @genres.each do |genre|
-      puts genre.name
-      puts "\n----------------------------"
+    if @genres.empty?
+      puts "\nNote: No genres available."
+    else
+      @genres.each do |genre|
+        puts genre.name
+        puts "\n----------------------------"
+      end
     end
   end
 
   def list_all_authors
-    puts "\nNote: No authors available." if @authors.empty?
-    puts "\nALL AUTHORS\n\n"
-    puts "\First Name \t| Last Name"
-    @authors.each do |author|
-      puts "#{author.first_name} \t| #{author.last_name}"
-      puts "\n-------------------------------------------------"
+    if @authors.empty?
+      puts "\nNote: No authors available."
+    else
+      puts "\nALL AUTHORS\n\n"
+      puts "\First Name \t| Last Name"
+      @authors.each do |author|
+        puts "#{author.first_name} \t| #{author.last_name}"
+        puts "\n-------------------------------------------------"
+      end
     end
   end
 
