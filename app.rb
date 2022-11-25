@@ -1,10 +1,7 @@
-require_relative './src/book/book'
-require_relative './src/label/label'
-require_relative './src/author/author'
-require_relative './src/music_album/music_album'
-require_relative './src/genre/genre'
-require_relative './src/game/game'
 require_relative './utils/msg'
+require_relative './operations/add_new_book'
+require_relative './operations/add_new_album'
+require_relative './operations/add_new_game'
 
 class App
   attr_accessor :books, :albums, :authors, :genres, :labels, :games
@@ -16,8 +13,6 @@ class App
     @genres = []
     @labels = []
     @games = []
-
-    load_data
   end
 
   def list_of_options
@@ -61,11 +56,22 @@ class App
   def add(input)
     case input
     when 7
-      add_new_book
+      book, label, author = add_new_book
+      @books << book
+      @labels << label
+      @authors << author
+      Msg.new.success('Book Added Successfully !!')
     when 8
-      add_new_album
+      music_album, label, genre = add_new_album
+      @albums << music_album
+      @labels << label
+      @genres << genre
+      Msg.new.success('Music Album Added Successfully !!')
     when 9
-      add_new_game
+      game, label = add_new_game
+      @games << game
+      @labels << label
+      Msg.new.success('Game Added Successfully !!')
     end
   end
 
@@ -74,7 +80,7 @@ class App
     until list_of_options
       input = gets.chomp.to_i
       if input.zero?
-        save_data
+        # save_data
         Msg.new.success('Thank you for using our app  :)')
         break
       end
@@ -89,7 +95,7 @@ class App
     else
       puts "\nALL BOOKS\n\n"
       puts "\nBooks \t| Publisher \t| Publish date \t| Cover state"
-      @books.each { |book| puts "#{book.label.name} #{book.publisher} #{book.publish_date} #{book.cover_state}" }
+      @books.each { |book| puts "#{book.label.title} #{book.publisher} #{book.publish_date} #{book.cover_state}" }
     end
   end
 
@@ -113,7 +119,7 @@ class App
       puts "\nALL ALBUMS\n\n"
       puts "\Genre \t| On spotify? \t| Album Name \t| Publish Date"
       @albums.each do |album|
-        puts "#{album.genre} \t| #{album.on_spotify} \t| #{album.label.name}
+        puts "#{album.genre.name} \t| #{album.on_spotify} \t| #{album.label.title}
         \t| #{album.publish_date}"
         puts "\n---------------------------------------------------"
       end
@@ -156,18 +162,4 @@ class App
       end
     end
   end
-
-  def add_book; end
-
-  def add_label; end
-
-  def add_author; end
-
-  def add_album; end
-
-  def add_game; end
-
-  def save_data; end
-
-  def load_data; end
 end
