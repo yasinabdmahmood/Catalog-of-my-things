@@ -1,9 +1,11 @@
+require 'securerandom'
+
 class Label
   attr_accessor :title, :color
-  attr_reader :items
+  attr_reader :items, :id
 
   def initialize(title, color)
-    @id = Random.rand(1...100)
+    @id = SecureRandom.hex(5)
     @title = title
     @color = color
     @items = []
