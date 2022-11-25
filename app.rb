@@ -1,6 +1,8 @@
 require_relative './utils/add_items'
 require_relative './utils/load_data'
+require_relative './utils/helper'
 require_relative './utils/msg'
+require 'table_print'
 
 class App
   attr_accessor :books, :albums, :authors, :genres, :labels, :games
@@ -75,10 +77,13 @@ class App
   end
 
   def start_program
-    books, games, albums = load_data
+    books, games, albums, authors, labels, genres = load_data
     @books = books
     @games = games
     @albums = albums
+    @authors = authors
+    @labels = labels
+    @genres = genres
     puts "\nWelcome to the catalog app  :)\n"
     until list_of_options
       input = gets.chomp.to_i
@@ -96,9 +101,9 @@ class App
     if @books.empty?
       Msg.new.error('Books not available yet :(')
     else
-      puts "\nALL BOOKS\n\n"
-      puts "\nBooks \t| Publisher \t| Publish date \t| Cover state"
-      @books.each { |book| puts "#{book.label.title} #{book.publisher} #{book.publish_date} #{book.cover_state}" }
+      puts
+      @books = Helper.retrieve_books
+      tp @books
     end
   end
 
@@ -106,12 +111,9 @@ class App
     if @labels.empty?
       Msg.new.error('Lables not available yet :(')
     else
-      puts "\nALL LABELS\n\n"
-      puts "\nLabels \t| Color"
-      @labels.each do |label|
-        puts "#{label.title} \t| #{label.color}"
-        puts "\n----------------------------"
-      end
+      puts
+      @labels = Helper.retrieve_labels
+      tp @labels
     end
   end
 
@@ -119,13 +121,9 @@ class App
     if @albums.empty?
       Msg.new.error('Albums not available yet :(')
     else
-      puts "\nALL ALBUMS\n\n"
-      puts "\Genre \t| On spotify? \t| Album Name \t| Publish Date"
-      @albums.each do |album|
-        puts "#{album.genre.name} \t| #{album.on_spotify} \t| #{album.label.title}
-        \t| #{album.publish_date}"
-        puts "\n---------------------------------------------------"
-      end
+      puts
+      @albums = Helper.retrieve_music_album
+      tp @albums
     end
   end
 
@@ -133,12 +131,9 @@ class App
     if @games.empty?
       Msg.new.error('Games not available yet :(')
     else
-      puts "\nALL GAMES\n\n"
-      puts "\Games \t| Multiplayer \t| Last Played At"
-      @games.each do |game|
-        puts "\t #{game.label.name} \t#{game.last_played_at} \t| #{game.multiplayer}"
-        puts "\n-------------------------------------------------"
-      end
+      puts
+      @games = Helper.retrieve_games
+      tp @games
     end
   end
 
@@ -146,10 +141,9 @@ class App
     if @genres.empty?
       Msg.new.error('Genres not available yet :(')
     else
-      @genres.each do |genre|
-        puts genre.name
-        puts "\n----------------------------"
-      end
+      puts
+      @genres = Helper.retrieve_genres
+      tp @genres
     end
   end
 
@@ -157,12 +151,9 @@ class App
     if @authors.empty?
       Msg.new.error('Authors not available yet :(')
     else
-      puts "\nALL AUTHORS\n\n"
-      puts "\First Name \t| Last Name"
-      @authors.each do |author|
-        puts "#{author.first_name} \t| #{author.last_name}"
-        puts "\n-------------------------------------------------"
-      end
+      puts
+      @authors = Helper.retrieve_authors
+      tp @authors
     end
   end
 end
