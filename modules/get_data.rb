@@ -5,8 +5,20 @@ module GetData
     JSON.parse(file_data)
   end
 
-  def retrive_books
+  def retrieve_books
     retrieve_data('data/books.json')
+  end
+
+  def retrieve_authors
+    retrieve_data('data/authors.json')
+  end
+
+  def retrieve_labels
+    retrieve_data('data/labels.json')
+  end
+
+  def retrieve_genres
+    retrieve_data('data/genres.json')
   end
 
   def retrieve_games

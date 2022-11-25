@@ -1,7 +1,7 @@
 require 'securerandom'
 
 class Author
-  attr_reader :first_name, :last_name, :items
+  attr_reader :first_name, :last_name, :items, :id
 
   def initialize(first_name, last_name)
     @id = SecureRandom.hex(5)

@@ -3,9 +3,9 @@ require_relative '../modules/store_data'
 require_relative '../modules/get_data'
 require_relative '../modules/user_input'
 
-module HelperMethods
-  include Reconstruction
-  include StoreData
-  include GetData
-  include UserInput
+class Helper
+  extend UserInput
+  extend Reconstruction
+  extend StoreData
+  extend GetData
 end
