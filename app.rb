@@ -1,7 +1,5 @@
+require_relative './utils/add_items'
 require_relative './utils/msg'
-require_relative './operations/add_new_book'
-require_relative './operations/add_new_album'
-require_relative './operations/add_new_game'
 
 class App
   attr_accessor :books, :albums, :authors, :genres, :labels, :games
