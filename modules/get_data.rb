@@ -5,7 +5,7 @@ module GetData
     JSON.parse(file_data)
   end
 
-  def retrive_books
+  def retrieve_books
     retrieve_data('data/books.json')
   end
 
