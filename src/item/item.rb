@@ -2,7 +2,7 @@ require_relative '../../utils/time_diff'
 require 'securerandom'
 
 class Item
-  attr_reader :genre, :author, :source, :label
+  attr_reader :genre, :author, :source, :label, :id
 
   def initialize(publish_date)
     @id = SecureRandom.hex(5)
