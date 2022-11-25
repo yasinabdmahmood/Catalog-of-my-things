@@ -24,7 +24,7 @@ module StoreData
 
   def store_music_album(music_album)
     hashed_music_album = {
-      'id' => music.id,
+      'id' => music_album.id,
       'music_title' => music_album.label.title,
       'genre_name' => music_album.genre.name,
       'publish_date' => music_album.publish_date,
@@ -44,5 +44,31 @@ module StoreData
       'publish_date' => game.publish_date
     }
     store('data/games.json', hashed_game)
+  end
+
+  def store_author(author)
+    hashed_game = {
+      'id' => author.id,
+      'first_name' => author.first_name,
+      'last_name' => author.last_name
+    }
+    store('data/authors.json', hashed_game)
+  end
+
+  def store_label(label)
+    hashed_game = {
+      'id' => label.id,
+      'label_name' => label.title,
+      'label_color' => label.color
+    }
+    store('data/labels.json', hashed_game)
+  end
+
+  def store_genre(genre)
+    hashed_game = {
+      'id' => genre.id,
+      'genre_name' => genre.name
+    }
+    store('data/genres.json', hashed_game)
   end
 end
