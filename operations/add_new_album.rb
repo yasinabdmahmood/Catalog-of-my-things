@@ -2,13 +2,10 @@ require_relative '../src/music_album/music_album'
 require_relative '../src/genre/genre'
 require_relative '../src/label/label'
 require_relative '../utils/helper'
-require_relative '../utils/msg'
 
 def add_new_album
-  title,
-  genre_name,
-  color,
-  pub_date,
+  title, genre_name,
+  color, pub_date,
   on_spotify = Helper.ask_for_user_inputs(
     'Enter music\'s name : ',
     'Enter genre\'s name : ',

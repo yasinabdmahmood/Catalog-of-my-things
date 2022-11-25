@@ -5,12 +5,9 @@ require_relative '../utils/helper'
 require_relative '../utils/msg'
 
 def add_new_book
-  title,
-  author_name,
-  pub_name,
-  color,
-  pub_date,
-  book_status = Helper.ask_for_user_inputs(
+  title, author_name,
+  pub_name, color,
+  pub_date, book_status = Helper.ask_for_user_inputs(
     'Enter book\'s name : ',
     'Enter author\'s name : ',
     'Enter publisher\'s name : ',
