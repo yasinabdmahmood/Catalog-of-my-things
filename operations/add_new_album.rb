@@ -23,5 +23,7 @@ def add_new_album
   label.add_item(music_album)
   genre.add_item(music_album)
   Helper.store_music_album(music_album)
+  Helper.store_label(label)
+  Helper.store_genre(genre)
   [music_album, label, genre]
 end

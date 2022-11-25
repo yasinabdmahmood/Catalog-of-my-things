@@ -20,5 +20,6 @@ def add_new_game
   label = Label.new(title, color)
   label.add_item(game)
   Helper.store_game(game)
+  Helper.store_label(label)
   [game, label]
 end

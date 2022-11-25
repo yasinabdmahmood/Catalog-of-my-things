@@ -24,5 +24,7 @@ def add_new_book
   author = Author.new(author_name.split[0], author_name.split[1])
   author.add_item(book)
   Helper.store_book(book)
+  Helper.store_author(author)
+  Helper.store_label(label)
   [book, label, author]
 end
