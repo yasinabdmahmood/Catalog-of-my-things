@@ -1,4 +1,5 @@
 require_relative './utils/add_items'
+require_relative './utils/load_data'
 require_relative './utils/msg'
 
 class App
@@ -74,6 +75,10 @@ class App
   end
 
   def start_program
+    books, games, albums = load_data
+    @books = books
+    @games = games
+    @albums = albums
     puts "\nWelcome to the catalog app  :)\n"
     until list_of_options
       input = gets.chomp.to_i
