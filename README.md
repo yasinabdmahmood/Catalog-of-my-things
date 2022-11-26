@@ -4,6 +4,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+    - [Video Presentation](#video-presentation)
   - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
@@ -49,6 +50,10 @@
 - **Add Items : Book, Game and Music Album**
 - **Preserve data in JSON file format**
 - **Tabular Data Visualization**
+
+### Video presentation <a name="video-presentation"></a> 
+- [Click here](https://drive.google.com/file/d/11UhU_JYFRqlpS1Ofg2o7xudzUA1rTLL1/view?usp=sharing
+)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
