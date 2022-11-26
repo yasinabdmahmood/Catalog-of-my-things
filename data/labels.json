@@ -1,0 +1,22 @@
+[
+  {
+    "id": "98f088b828",
+    "label_name": "Capstone-I",
+    "label_color": "Yellow"
+  },
+  {
+    "id": "1b59c0086d",
+    "label_name": "Capstone-II",
+    "label_color": "Green"
+  },
+  {
+    "id": "c1e2a21da8",
+    "label_name": "Woosh",
+    "label_color": "Magenta"
+  },
+  {
+    "id": "1c5d1c1047",
+    "label_name": "Mario",
+    "label_color": "Purple"
+  }
+]

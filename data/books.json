@@ -1,0 +1,20 @@
+[
+  {
+    "id": "07d7cdaf03",
+    "title": "Capstone-I",
+    "publisher": "Microverse",
+    "publish_date": "2020-10-10",
+    "color": "Yellow",
+    "author_name": "Aakash Verma",
+    "cover_state": "bad"
+  },
+  {
+    "id": "af45f7a174",
+    "title": "Capstone-II",
+    "publisher": "Microsoft",
+    "publish_date": "2018-06-07",
+    "color": "Green",
+    "author_name": "Yaseen ",
+    "cover_state": "good"
+  }
+]
