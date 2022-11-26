@@ -1,73 +1,105 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+## 📗 Table of Contents
 
-# Catalog of my things
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run rspec test](#run-rspec)
+  - [Run rubocop linters test](#run-rubocop)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
 
-> This is the final group project for Ruby to develop a console application implementing the Catalog of things displaying the list of books, musics, movies, and games. It is developed using Ruby.
+<!-- PROJECT DESCRIPTION -->
 
-### Console App Screenshot
+# 📖 Catalog Of My Things <a name="about-project"></a>
 
-![](./app_screenshot.JPG)
+> Catalog of my things is a console app that will help you to keep a record of different types of things you own: books, music albums, movies, and games. Everything is be based on the UML class diagram presented below. The data is stored in JSON files but you there is also  a database with tables structure analogical to the  program's class structure.
 
-## Built With
+**Catalog of my things** is a command line based desktop application.
 
-- Ruby
-- IRB 
-- VS Code 
+## 🛠 Built With <a name="built-with"></a>
 
-## Live Demo 
+### Tech Stack <a name="tech-stack"></a>
 
-No live demo 
+> Ruby
 
-## Video presentation 
+<details>
+<summary>Database</summary>
+  <ul>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+  </ul>
+</details>
 
-Click [here](https://drive.google.com/file/ to see video presentation
+<!-- Features -->
+
+### Key Features <a name="key-features"></a>
+
+> Key Features:
+
+- **Add Items : Book, Game and Music Album**
+- **Preserve data in JSON file format**
+- **Tabular Data Visualization**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## Getting Started
+<!-- GETTING STARTED -->
 
-Copy this link https://github.com/yasinabdmahmood/Catalog-of-my-things
-Get the directory that you want to clone the repository.
-Open the command prompt in this directory.
+## 💻 Getting Started <a name="getting-started"></a>
 
-### Setup
-Clone repository
+> First of all user should have Ruby installed on their machine or system then just follow these steps.
 
-```
-git clone https://github.com/yasinabdmahmood/Catalog-of-my-things
+### Prerequisites <a name="prerequisites"></a>
 
-Go to the repository folder in your command prompt
-```
-cd catalog-of-my-things
-```
+In order to run application please proceed with following steps :
 
-## Install
-Install Ruby using WSL 
+### Setup <a name="setup"></a>
 
-Install Ubuntu after system restart  
-Run the commands
+Clone this repository to your desired folder:
 
-```
-bundle install
-```
+**git clone https://github.com/yasinabdmahmood/Catalog-of-my-things.git**
 
-## To run project
+### Install <a name="install"></a>
 
-on the command prompt 
+Install this project with:
 
-```
-ruby main.rb
-```
+run `bundle install` and hit enter.
 
-## To run tests for the application 
+### Usage <a name="usage"></a>
 
-on the command prompt 
+To run the project, execute the following command:
 
-```
-rspec
-```
+run `ruby main.rb` and hit enter.
 
-## Authors
+### Run rspec tests <a name="run-rspec"></a>
 
+To run tests, run the following command:
+
+run `rspec spec` and hit enter.
+
+### Run rubocop linters test <a name="run-rubocop"></a>
+
+To run tests, run the following command:
+
+run `rubocop` and hit enter.
+
+For auto-correction use below command 
+
+run `rubocop -a` and hit enter.
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
 👤 **Aakash Verma**
 
 - GitHub: [@skyv26](https://github.com/skyv26)
@@ -84,22 +116,54 @@ rspec
 - GitHub: [@juanmanuelbyc](https://github.com/juanmanuelbyc)
 - LinkedIn: [juandiaz](www.linkedin.com/in/juandiaz1991)
 
-## 🤝 Contributing
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+> We will soon introduce following features.
+
+- [ ] **Application Security**
+- [ ] **Application Data Encryption**
+- [ ] **Improve data visualization**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page] https://github.com/yasinabdmahmood/Catalog-of-my-things/issues
+Feel free to check the [issues page](../../issues/).
 
-## Show your support
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Give a ⭐️ if you like this project!
+<!-- SUPPORT -->
 
-## Acknowledgments
+## ⭐️ Show your support <a name="support"></a>
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+> Write a message to encourage readers to support your project
 
-## 📝 License
+If you like this project please give a star to this repo and follow us on above mentioned social handles.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+> Give credit to everyone who inspired your codebase.
+
+- Microverse
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
 
 This project is [MIT](./MIT.md) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
